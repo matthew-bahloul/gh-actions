@@ -29,7 +29,8 @@ jobs: # This workflow contains a single job called "build"
           sudo apt update
           pip3 install -r requirements.txt
           sudo apt install snapd
-          snapd install chromium
+          
+        run: sudo snapd install chromium
 
 
       - name: run python script
