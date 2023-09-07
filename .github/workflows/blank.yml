@@ -37,3 +37,7 @@ jobs:
           source venv/bin/activate
           which python
           python3 main.py
+        with:
+          name: artifacts
+          path: screenshots/*
+          retention-days: 1
