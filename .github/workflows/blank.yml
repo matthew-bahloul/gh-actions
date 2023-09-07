@@ -26,11 +26,9 @@ jobs:
       # run the scripts before the main python thing
       - name: install dependencies
         run: |
-          uname -m
-          brew update
-          brew install --cask google-chrome
-          pip3 install -r requirements.txt
+          /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+
 
       # run the actual script that I care about
       - name: run python script
-        run: python3 main.py
+        run: echo "python3 main.py"
