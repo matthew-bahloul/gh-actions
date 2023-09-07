@@ -12,11 +12,11 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs: # This workflow contains a single job called "build"
+jobs:
+  # The type of runner that the jobs will run on
+  runs-on: macos-12
+  
   setup:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-22.04
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -26,13 +26,10 @@ jobs: # This workflow contains a single job called "build"
       - name: install dependencies
         run: |
           uname -m
-          sudo apt update
+          brew update
+          brew install --cask google-chrome
           pip3 install -r requirements.txt
-          sudo apt install snapd
-      
-      - name: install chrome
-        run: sudo snapd install chromium
 
-
+  main:
       - name: run python script
         run: python3 main.py
