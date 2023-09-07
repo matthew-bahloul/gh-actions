@@ -31,7 +31,5 @@ jobs:
           brew install --cask google-chrome
           pip3 install -r requirements.txt
 
-    runs-on: macos-12
-    
       - name: run python script
         run: python3 main.py
