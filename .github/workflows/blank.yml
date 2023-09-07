@@ -27,8 +27,13 @@ jobs:
       - name: install dependencies
         run: |
           /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
-
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements
 
       # run the actual script that I care about
       - name: run python script
-        run: echo "python3 main.py"
+        run: |
+          ls -ahl
+          which python
+          echo "python3 main.py"
