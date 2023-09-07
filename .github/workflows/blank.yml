@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   
-  cool job:
+  cool-job:
     # The type of runner that the jobs will run on
     runs-on: macos-12
     
@@ -23,7 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # run the scripts before the main python thing
       - name: install dependencies
         run: |
           uname -m
@@ -31,5 +31,6 @@ jobs:
           brew install --cask google-chrome
           pip3 install -r requirements.txt
 
+      # run the actual script that I care about
       - name: run python script
         run: python3 main.py
