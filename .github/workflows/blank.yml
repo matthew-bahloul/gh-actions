@@ -34,6 +34,6 @@ jobs:
       # run the actual script that I care about
       - name: run python script
         run: |
-          ls -ahl
+          source venv/bin/activate
           which python
-          echo "python3 main.py"
+          python3 main.py
